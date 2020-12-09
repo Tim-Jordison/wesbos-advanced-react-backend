@@ -1,0 +1,6 @@
+endpoint: https://us1.prisma.sh/tim-8c7c15/sick-fits/dev
+datamodel: datamodel.prisma
+
+generate:
+  - generator: typescript-client
+    output: ./generated/prisma-client/
