@@ -1,5 +1,10 @@
-endpoint: https://us1.prisma.sh/tim-8c7c15/sick-fits/dev
+endpoint: ${env:PRISMA_ENDPOINT}
 datamodel: datamodel.prisma
+#secret: ${env:PRISMA_SECRET}
+
+hooks:
+  post-deploy:
+    - graphql get-schema -p prisma
 
 generate:
   - generator: typescript-client
